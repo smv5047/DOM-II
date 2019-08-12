@@ -10,13 +10,32 @@
 // * [ ] `select`
 // * [X] `dblclick`
 
+//Random Color Function
 
-//Body
+
+//Window
 
 let body = document.querySelector("body")
+let navBar = document.querySelector(".main-navigation")
 
-body.addEventListener('scroll', ()=> {
+window.addEventListener('scroll', ()=> {
     console.log('scroll activated')
+    body.style.background = "blue"
+})
+
+window.addEventListener('resize', ()=> {
+    console.log('Ive been resized')
+    navBar.style.background = "orange"
+})
+
+window.addEventListener('load', ()=> {
+    alert("Welcome to My Page")
+})
+
+document.addEventListener('keydown', (event) => {
+	if(event.key === 't') {
+	alert('The date and time are ' + Date())
+}
 })
 
 //Logo 
@@ -41,6 +60,7 @@ for (i =0; i<navLink.length; i++) {
 }
 
 
+
 //Header Bus Picture
 let bus = document.querySelector(".intro img")
 
@@ -50,9 +70,44 @@ bus.addEventListener('dblclick', () => {
 })
 
 
-// let welcome = document.querySelector(".intro h2")
+//Body
 
-// welcome.addEventListener('select', () => {
-//     console.log('text selected')
-//     welcome.style.color = "red"
-// })
+let mapImage = document.querySelector(".img-content")
+let paragraphs = document.querySelectorAll("p")
+let text = document.querySelector(".text-content p")
+
+text.addEventListener('click', ()=> {
+    text.style.color = "orange"
+
+})
+
+
+for (i=0; i< paragraphs.length; i++) {
+    paragraphs[i].addEventListener('copy', ()=> {
+        alert("Dont Copy Us")
+    })
+}
+
+mapImage.addEventListener('wheel', () => {
+    console.log("Wheeeeeel")
+    mapImage.style.transform = "scale(2.5)"
+})
+
+mapImage.addEventListener('drag', ()=> {
+    console.log("This is a drag")
+        alert("Stop Moving Me!")
+})
+
+
+
+
+const btn = document.querySelector('.btn')
+const contentSection = document.querySelector('.content-pick')
+
+function makeButtonRed(event) {
+  event.currentTarget.style.backgroundColor = 'red'
+    event.stopPropagation()
+}
+
+btn.addEventListener('click', makeButtonRed)
+contentSection.addEventListener('click', makeButtonRed)
