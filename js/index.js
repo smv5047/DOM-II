@@ -67,6 +67,7 @@ let bus = document.querySelector(".intro img")
 bus.addEventListener('dblclick', () => {
     console.log('bus was double clicked')
     bus.style.border = "10px red solid"
+    TweenLite.to(bus, 2, {width: "200px", height:"150px"});
 })
 
 
