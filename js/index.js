@@ -46,6 +46,7 @@ let logo = document.querySelector(".logo-heading")
 logo.addEventListener('mouseover', ()=> {
     console.log('logo moused over');
     logo.style.color = "red" 
+    TweenLite.to(logo, 1, {opacity:0.5, rotation:360});
 })
 
 //Nav Bar
@@ -112,3 +113,13 @@ function makeButtonRed(event) {
 
 btn.addEventListener('click', makeButtonRed)
 contentSection.addEventListener('click', makeButtonRed)
+
+//Magic Bus
+
+const content = document.querySelector(".content-section")
+const magicBus = document.createElement("img")
+magicBus.setAttribute('src', '/img/fun-bus-cropped.png')
+content.appendChild(magicBus)
+
+
+TweenLite.fromTo(magicBus, 1.5, {x: -1500, y: 0}, {x:1500, y:0});
