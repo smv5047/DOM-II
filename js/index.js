@@ -118,7 +118,7 @@ contentSection.addEventListener('click', makeButtonRed)
 
 const content = document.querySelector(".content-section")
 const magicBus = document.createElement("img")
-magicBus.setAttribute('src', '/img/fun-bus-cropped.png')
+magicBus.setAttribute('src', './img/fun-bus-cropped.png')
 content.appendChild(magicBus)
 
 
